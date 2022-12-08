@@ -5,13 +5,13 @@ import retrofit2.Response
 import retrofit2.http.*
 import java.util.*
 
-
 interface APIService {
 
     @FormUrlEncoded
     @POST("login")
-    fun doLogin(
-        @Field("username") username: String?,
+    suspend fun loginApi(
+        @Field("email") username: String?,
         @Field("password") password: String?
     ): Response<LoginResponse>
+
 }

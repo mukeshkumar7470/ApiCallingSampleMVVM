@@ -10,7 +10,6 @@ import okhttp3.ResponseBody.Companion.toResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
 import java.util.concurrent.TimeUnit
 
 object RetrofitHelper {
@@ -42,10 +41,13 @@ object RetrofitHelper {
                     .protocol(Protocol.HTTP_1_0).message("asd")
                     .body("asd".toResponseBody()).build()
             })
+            .addInterceptor(interceptor)
             .build()
         return Retrofit.Builder()
             .client(client)
-            .baseUrl("https://reqres.in/api/")
+            .baseUrl(
+                "https://reqres.in/api/"
+            )
             .addConverterFactory(GsonConverterFactory.create(Gson()))
             .build()
             .create(APIService::class.java)

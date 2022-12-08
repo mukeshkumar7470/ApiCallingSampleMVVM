@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ApiCallingSample</string>
+    <string name="msg_improper_response_server">Error</string>
 </resources>
