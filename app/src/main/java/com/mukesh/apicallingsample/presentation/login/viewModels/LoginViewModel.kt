@@ -6,12 +6,10 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.mukesh.apicallingsample.data.Response
 import com.mukesh.apicallingsample.data.repository.AppRepository
 import com.mukesh.apicallingsample.presentation.login.model.LoginResponse
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class LoginViewModel(
     app: Application,
@@ -25,24 +23,12 @@ class LoginViewModel(
     fun login(email: String, password: String) = viewModelScope.launch {
         Log.d("login... email: ", email)
         Log.d("login... password: ", password)
-        repository.login(email, password).collect {
-            if (it != null) {
-                it.enqueue(object : Callback<LoginResponse> {
-                    override fun onResponse(
-                        call: Call<LoginResponse>,
-                        response: Response<LoginResponse>
-                    ) {
-                        Log.d("success", "res :${response.toString()}")
-                        val dataTOken = response.body()
-                        Log.d("success", "$dataTOken")
-                    }
-
-                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                        Log.d("Failure", "error")
-                    }
-                })
-            }
+        loginResponseLiveData.postValue(Response.Loading())
+        val result = repository.login("eve.holt@reqres.in", "cityslicka")
+        if (result != null) {
+          //  loginResponseLiveData.postValue(Response.Success(result.body()))
         }
+
     }
 
 
