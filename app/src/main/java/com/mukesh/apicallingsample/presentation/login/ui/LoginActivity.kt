@@ -26,7 +26,8 @@ class LoginActivity : AppCompatActivity() {
         binding.cvLogin.setOnClickListener {
             val email = binding.etMobileNumber.text.toString()
             val password = binding.etPassword.text.toString()
-            when {
+            viewModel.login(email, password)
+            /*when {
                 email.isEmpty() -> {
                     binding.etMobileNumber.error = "Empty Email"
                 }
@@ -36,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
                 else -> {
                     viewModel.login(email, password)
                 }
-            }
+            }*/
 
 
         }

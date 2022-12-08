@@ -25,7 +25,7 @@ class LoginViewModel(
     fun login(email: String, password: String) = viewModelScope.launch {
         Log.d("login... email: ", email)
         Log.d("login... password: ", password)
-        repository.login(email, password).collect {
+        repository.login("eve.holt@reqres.in", "cityslicka").collect {
             if (it != null) {
                 it.enqueue(object : Callback<LoginResponse> {
                     override fun onResponse(
