@@ -63,6 +63,11 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this@LoginActivity, "Successfully  Logged in...", Toast.LENGTH_SHORT).show()
                   //  binding.liLoginUi.visibility =  View.GONE
                  //   binding.progressCircular.visibility =  View.VISIBLE
+                    binding.liLoginUi.visibility =  View.GONE
+                    binding.progressCircular.visibility =  View.GONE
+                    binding.tvUserName.visibility =  View.VISIBLE
+
+                    binding.tvUserName.setText(it.token)
 
                 }
             }
