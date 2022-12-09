@@ -6,13 +6,12 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.mukesh.apicallingsample.data.Response
+import com.mukesh.apicallingsample.data.response.Response
 import com.mukesh.apicallingsample.data.repository.AppRepository
 import com.mukesh.apicallingsample.databinding.ActivityMainBinding
 import com.mukesh.apicallingsample.observe
-import com.mukesh.apicallingsample.presentation.login.LoginViewModelFactory
+import com.mukesh.apicallingsample.presentation.login.viewModels.LoginViewModelFactory
 import com.mukesh.apicallingsample.presentation.login.model.LoginResponse
-import com.mukesh.apicallingsample.presentation.login.model.TokenResponse
 import com.mukesh.apicallingsample.presentation.login.viewModels.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.mukesh.apicallingsample.data
+package com.mukesh.apicallingsample.data.response
 
 sealed class Response<T>(val data: T? = null, val errorMesssage: String? = null) {
     class Loading<T> : Response<T>()

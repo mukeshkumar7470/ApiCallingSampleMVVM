@@ -1,17 +1,14 @@
 package com.mukesh.apicallingsample.presentation.login.viewModels
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.mukesh.apicallingsample.R
-import com.mukesh.apicallingsample.data.Response
+import com.mukesh.apicallingsample.data.response.Response
 import com.mukesh.apicallingsample.data.repository.AppRepository
 import com.mukesh.apicallingsample.presentation.login.model.LoginResponse
-import com.mukesh.apicallingsample.presentation.login.model.TokenResponse
-import com.sk.user.agent.optimizecode.utils.SingleLiveEvent
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
